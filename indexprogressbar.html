@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar JAVASCRIPT,CSS AND HTML</title>
+</head>
+<style>
+    #Progress_Status {
+        width: 50%;
+        background-color: aqua;
+    }
+    #myprogressBar{
+        width: 1%;
+        height: 35px;
+        background-color: rgb(126, 206, 21);
+        text-align: center;
+        line-height: 32px;
+        color: black;
+    }
+</style>
+<body>
+    <h3>This is an Example of a Progress Bar</h3>
+    <p>Download the Status bar progress!</p>
+
+    <div id="Progress_Status"></div>
+    <div id="myprogressBar">1%</div>
+
+    <br>
+    <button onclick="update()">Start Download</button>
+
+    <script>
+        function update(){
+            var element = document.getElementById("myprogressBar")
+            var width = 1;
+            var identity = setInterval(scene, 100);
+            function scene (){
+                if (width >= 100){
+                    clearInterval(identity);
+                } else{
+                    width ++;
+                    element.stylewidth = width + '%';
+                    element.innerHTML = width * 1 + '%';
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>
